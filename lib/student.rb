@@ -1,3 +1,3 @@
 class Student
-  attr_accessor :name, :cohort_id
+  attr_accessor :id, :name, :cohort_id
 end
