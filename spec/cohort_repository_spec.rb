@@ -4,7 +4,7 @@ require "student"
 
 describe CohortRepository do
 
-  before(:each) do
+  before(:all) do
     @repo = CohortRepository.new
     @cohort = Cohort.new
     @cohort.name = "Second" ; @cohort.starting_date = "2020-11-30"
@@ -22,7 +22,7 @@ describe CohortRepository do
 
     it "returned cohort contains array of students" do
       expect(@repo.find_with_students(2).students).to eq [
-      @student_1, @student_2]
+      @student1, @student2]
     end
   end
 
