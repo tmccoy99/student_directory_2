@@ -16,8 +16,13 @@ describe CohortRepository do
   end
 
   context "#find_with_students given integer argument" do
-    it "#returns cohort with corresponding id" do
+    it "returns cohort with corresponding id" do
       expect(@repo.find_with_students(2)).to eq @cohort
+    end
+
+    it "returned cohort contains array of students" do
+      expect(@repo.find_with_students(2).students).to eq [
+      @student_1, @student_2]
     end
   end
 
