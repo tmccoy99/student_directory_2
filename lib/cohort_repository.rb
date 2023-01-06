@@ -14,6 +14,15 @@ class CohortRepository
     cohort.id = id
     cohort.name = result.first["cohort_name"]
     cohort.starting_date = result.first["starting_date"]
+    
+    cohort.students = result.map do |record|
+      student = Student.new
+      student.id = record["student_id"].to_i
+      student.name = record["student_name"]
+      student.cohort_id = id
+      student
+    end
+
     cohort
   end
 
